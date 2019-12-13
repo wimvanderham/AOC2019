@@ -124,7 +124,7 @@ while found == False:
                 print axis_name[index], step
                 #print history[history_moons], step - history[history_moons], cycle_list
             if len(axis_list) == 3:
-                print "Found all cycles!"
+                print "Found all cycles!",
                 print cycle_list
                 found = True
         else:
@@ -145,7 +145,21 @@ while found == False:
 
 
 print "Now calculate the LCM of:", cycle_list
-print "https://www.calculatorsoup.com/calculators/math/lcm.php?input=" + str(cycle_list[0]) + "+" + str(cycle_list[1]) + "+" + str(cycle_list[2]) + "&data=none&action=solve"
+
+# Python program to find the L.C.M. of two input number
+# This function computes GCD 
+def compute_gcd(x, y):
+   while(y):
+       x, y = y, x % y
+   return x
+# This function computes LCM
+def compute_lcm(x, y):
+   lcm = (x*y)//compute_gcd(x,y)
+   return lcm
+
+
+print "The LCM is", compute_lcm(cycle_list[0], compute_lcm(cycle_list[1], cycle_list[2]))
+#print "https://www.calculatorsoup.com/calculators/math/lcm.php?input=" + str(cycle_list[0]) + "+" + str(cycle_list[1]) + "+" + str(cycle_list[2]) + "&data=none&action=solve"
     
 end = time.time()
 
