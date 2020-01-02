@@ -451,7 +451,7 @@ start_pos = special[1]
 goal      = special[2]
 print start_pos, goal
  
-shortest_path = bfs_shortest_path(graph, (0,0), (16,12))
+shortest_path = bfs_shortest_path(graph, start_pos, goal)
 
 print shortest_path, len(shortest_path) - 1
 for position in shortest_path:
@@ -471,7 +471,7 @@ start = time.time()
 
 minutes = 0
 for position in to_fill.keys():
-    shortest_path = bfs_shortest_path(graph, (16,12), position)
+    shortest_path = bfs_shortest_path(graph, goal, position)
     if len(shortest_path) - 1 > minutes:
         minutes = len(shortest_path) - 1
         shortest_shortest_path = list(shortest_path)
